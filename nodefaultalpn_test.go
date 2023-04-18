@@ -56,7 +56,7 @@ func TestNodefaultalpn(t *testing.T) {
 		r, err := dns.Exchange(m, udp)
 		assert.Nil(t, err)
 		L.Describe(r)
-		assert.Equal(t, r.Answer[0].String(), `example.org.	3600	IN	HTTPS	1 . no-default-alpn=""`)
+		assert.Equal(t, r.Answer[0].String(), `example.org.	3600	IN	HTTPS	1 . no-default-alpn`)
 	})
 
 	t.Run(`check with dig`, func(t *testing.T) {
